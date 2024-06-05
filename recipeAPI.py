@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 from sentence_transformers import SentenceTransformer, util
+from flask_cors import CORS
 import os
 import joblib
 
@@ -36,6 +37,8 @@ def find_similar_recipes(query, embeddings, recipes, top_k=5):
     query_embedding = model.encode([query], convert_to_tensor=True)
     scores = util.semantic_search(query_embedding, embeddings, top_k=top_k)
     return scores[0]  # Return the top_k results
+
+CORS(app)  # Enable CORS for all domains on all routes
 
 @app.route('/find_similar', methods=['POST'])
 def find_similar():

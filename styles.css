@@ -1,0 +1,38 @@
+#chat-container {
+    width: 350px;
+    height: 500px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 50px auto;
+}
+
+#chat-box {
+    height: 440px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#chat-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+#chat-box li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+input[type="text"] {
+    width: calc(100% - 50px);
+    padding: 5px;
+}
+
+button {
+    width: 50px;
+    height: 32px;
+}
+
+/* Add more styles as per your preference */
